@@ -1,0 +1,110 @@
+.toolbar-container
+{
+  font-size: 14px;
+  position: relative;
+  border-bottom: 1px solid black;
+  min-width: 1000px;
+  width: 100%;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  z-index: 9999;
+  text-align: left;
+  background-color: rgb(47,100,79);
+  overflow-y: visible;
+}
+
+.links-section
+{
+  grid-column: 2;
+  margin: 0;
+  padding:0;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  height:100%;
+}
+
+
+.toolbar-link-container
+{
+  display:flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.toolbar-link div
+{
+  display:flex;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-link, .dropdown-link
+{
+  color: #fdfdfd;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.dropdown-link {
+  display: flex;
+  align-items: center;
+}
+.dropdown-link > span {
+  padding: 0 20px;
+}
+
+.toolbar-link
+{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toolbar-link > a {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+
+.toolbar-link:hover
+{
+  color: black;
+  background-color: rgb(41, 87, 68);
+  border-right-color: black;
+  border-left-color: black;
+}
+
+.user-selector-container {
+  flex: 1 1;
+  justify-self: flex-end;
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.user-selector {
+  width: 150px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  border-color: #555555;
+  height: 50%;
+}
+
+.user-selector:hover {
+	border-color: #333333;
+}
+
+.user-label {
+  color: #fdfdfd;
+  margin: 0 5px 1px;
+}
