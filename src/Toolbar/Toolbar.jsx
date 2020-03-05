@@ -1,6 +1,5 @@
 import React from 'react';
 import './Toolbar.css';
-import { withRouter } from "react-router-dom";
 import UserSelector from './UserSelector';
 import ToolbarItem from './ToolbarItem';
 
@@ -21,10 +20,10 @@ const toolbarItems = [
 const Toolbar = () => (
     <div className="toolbar-container">
       <div className="links-section">
-        {toolbarItems.map(item => <ToolbarItem name={item.name} link={item.link} />)}
+        {toolbarItems.map((item, index) => <ToolbarItem key={`user-${index}`} name={item.name} link={item.link} />)}
         <UserSelector />
       </div>
     </div>
 );
 
-export default withRouter(Toolbar);
+export default Toolbar;

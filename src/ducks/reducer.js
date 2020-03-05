@@ -2,6 +2,7 @@ import { fromJS } from 'immutable';
 import picks from '../resources/picks.json';
 import teamList from '../resources/teamlist.json';
 import seedOrder from '../resources/seedOrder.json';
+import currentOdds from '../resources/currentOdds.json';
 import users from '../resources/users.json';
 
 const createGame = (gameId, team1Id, team2Id, team1Score, team2Score) => {
@@ -112,9 +113,39 @@ const initialState = fromJS({
     selectedUserId: 0,
     users,
     picks,
+    currentOdds,
 });
 
-export const countReducer = function (state = initialState, { type, payload }) {
+const getInitState = () => {
+    const js = initialState.toJS();
+    js.games[0].meta = {
+        users: {
+            0: [
+                {
+                    teamId: 0,
+                    expectedMoney: 15.43,
+                    perc1st: 12.12,
+                    perc2nd: 4.32,
+                    percLast: 0.00,    
+                },
+                {
+                    teamId: 1,
+                    expectedMoney: 18.43,
+                    perc1st: 11.12,
+                    perc2nd: 3.32,
+                    percLast: 1.00,    
+                }
+            ]
+        },
+        teamOdds: {
+            0: 67.4,
+            1: 32.6,
+        }
+    }
+    return fromJS(js);
+}
+
+export const countReducer = function (state = getInitState(), { type, payload }) {
     if (type && type.indexOf('SPREAD') !== -1) {
         return state.merge(payload);
     }

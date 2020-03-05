@@ -244,3 +244,89 @@ span {
   background-color: #cccccc;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,.3);
 }
+
+.overall-standings {
+  background-color: white;
+  width: fit-content;
+  margin: 30px;
+  border: 1px solid grey;
+}
+
+.standings-table {
+  background: #fdfdfd;
+  border-radius:3px;
+  border-collapse: collapse;
+  padding:0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.standings-table > tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#111111;
+  font-size:13px;
+  font-weight: 520;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.4);
+}
+
+tr:first-child {
+  border-top:none;
+}
+
+tr:last-child {
+  border-bottom:none;
+}
+
+tr:nth-child(odd) {
+  background:#EBEBEB;
+}
+
+tr:nth-child(even) {
+  background:#fdfdfd;
+}
+
+tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+
+tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+
+td {
+  background:#FFFFFF;
+  padding:3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align:left;
+  vertical-align:middle;
+  font-size:12px;
+}
+
+td:last-child {
+  border-right: 0px;
+}
+
+th.text-left {
+  text-align: left;
+}
+
+th.text-center {
+  text-align: center;
+}
+
+th.text-right {
+  text-align: right;
+}
+
+td.text-left {
+  text-align: left;
+}
+
+td.text-center {
+  text-align: center;
+}
+
+td.text-right {
+  text-align: right;
+}
