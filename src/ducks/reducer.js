@@ -110,7 +110,7 @@ export const getInitialTeamList = () => {
 const initialState = fromJS({
     teams: getInitialTeamList(),
     games: gameList,
-    selectedUserId: 0,
+    selectedUserId: '0',
     users,
     picks,
     currentOdds,
