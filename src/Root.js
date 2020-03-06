@@ -11,7 +11,7 @@ const App =
 ({ store }) => {
   return (
     <Provider store={store}>
-      <BrowserRouter forceRefresh={true}>
+      <BrowserRouter forceRefresh={false}>
         <div className="App">
         <Toolbar />
         <Route path="/" component={ContentArea} />
