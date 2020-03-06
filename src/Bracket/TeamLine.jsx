@@ -56,7 +56,7 @@ class TeamLine extends PureComponent {
                 {this.props.teamInfo.seed}
                 </span>
                 <span className="team-name">
-                    {this.props.teamInfo.teamName}
+                    {this.props.teamInfo.name}
                 </span>
                 <span className="score">
                     {this.props.score}

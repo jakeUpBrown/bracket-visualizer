@@ -9,12 +9,12 @@ const toolbarItems = [
     link: "/",
   },
   {
-    name: "OVERALL STANDINGS",
-    link: "/standings/overall",
+    name: "CURRENT STANDINGS",
+    link: "/standings/current",
   },
   {
-    name: "INDIVIDUAL STANDINGS",
-    link: "/standings/individual",
+    name: "PICKS",
+    link: "/picks",
   }
 ]
 const Toolbar = () => (

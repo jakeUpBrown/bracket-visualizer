@@ -1,10 +1,7 @@
 import React from 'react';
-import BracketPage from './Bracket/BracketPage.jsx';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 import Toolbar from './Toolbar/Toolbar.jsx';
-import IndividualStandings from './Standings/IndividualStandings';
-import OverallStandings from './Standings/OverallStandings';
 import ContentArea from './ContentArea';
 
 import './App.css';

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import BracketPage from './Bracket/BracketPage.jsx';
 import { Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
-import IndividualStandings from './Standings/IndividualStandings';
-import OverallStandings from './Standings/OverallStandings';
+import PicksPage from './Standings/PicksPage';
+import CurrentStandings from './Standings/CurrentStandings';
 import { setSelectedUserId } from './ducks/reducer';
 import * as QueryString from "query-string"
 
@@ -25,8 +25,8 @@ class ContentArea extends Component {
             <Switch>
                 <div className="content-area">
                     <Route exact path="/" component={BracketPage} />
-                    <Route exact path="/standings/overall" component={OverallStandings} />
-                    <Route exact path="/standings/individual" component={IndividualStandings} />
+                    <Route exact path="/standings/current" component={CurrentStandings} />
+                    <Route exact path="/picks" component={PicksPage} />
                 </div>
             </Switch>
           );

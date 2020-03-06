@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import '../App.css';
-import { getUserNameMap } from '../utilities/selectors';
 
-const OverallStandings = ({
+const CurrentStandings = ({
     currentOdds,
-    userMap,
+    users,
 }) => 
 (
     <div className="overall-standings">
@@ -17,15 +16,17 @@ const OverallStandings = ({
                 <th>2nd</th>
                 <th>last</th>
                 <th>avg place</th>
+                <th>pts</th>
             </tr>
             {currentOdds && currentOdds.map(odds => {
                 return (<tr>
-                    <td>{userMap[odds.playerId]}</td>
+                    <td>{users[odds.playerId].name}</td>
                     <td>${odds.avgMoney}</td>
                     <td>{odds.perc1st}%</td>
                     <td>{odds.perc2nd}%</td>
                     <td>{odds.percLast}%</td>
                     <td>{odds.avgPlace}</td>
+                    <td>{odds.currentScore}</td>
                 </tr>);
             })}
         </table>
@@ -36,12 +37,13 @@ const mapStateToProps = (state) => {
     const jsState = state.toJS();
     const {
         currentOdds,
+        users,
     } = jsState;
     return {
         currentOdds,
-        userMap: getUserNameMap(state),
+        users,
     }
 }
-const disconnected = connect(mapStateToProps)(OverallStandings);
+const disconnected = connect(mapStateToProps)(CurrentStandings);
 
 export default React.memo(disconnected);

@@ -25,7 +25,11 @@ const UserSelector = ({ selectedUserId, users, setSelectedUserId, history, locat
             value={selectedUserId}
             className='user-selector'
         >
-            {users && users.map(user => <option value={user.userId}>{user.name}</option>)}
+            {users && Object.values(users).map(user => {
+                return (
+                    <option value={user.userId}>{user.name}</option>)}
+                )
+            } 
         </select>
     </div>
 );

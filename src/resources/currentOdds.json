@@ -4,127 +4,143 @@
       "perc1st": "100.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "1.0",
-      "playerId": "12"
+      "avgPlace": 1.0,
+      "playerId": "12",
+      "currentScore": 3159
     },
     {
       "avgMoney": "70.0",
       "perc1st": "0.0",
       "perc2nd": "100.0",
       "percLast": "0.0",
-      "avgPlace": "2.0",
-      "playerId": "11"
+      "avgPlace": 2.0,
+      "playerId": "11",
+      "currentScore": 3150
     },
     {
       "avgMoney": "10.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "100.0",
-      "avgPlace": "18.0",
-      "playerId": "0"
+      "avgPlace": 18.0,
+      "playerId": "0",
+      "currentScore": 2865
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "8.0",
-      "playerId": "1"
+      "avgPlace": 3.0,
+      "playerId": "5",
+      "currentScore": 3149
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "14.0",
-      "playerId": "2"
+      "avgPlace": 4.0,
+      "playerId": "6",
+      "currentScore": 3145
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "6.0",
-      "playerId": "3"
+      "avgPlace": 5.0,
+      "playerId": "14",
+      "currentScore": 3144
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "17.0",
-      "playerId": "4"
+      "avgPlace": 6.0,
+      "playerId": "3",
+      "currentScore": 3137
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "3.0",
-      "playerId": "5"
+      "avgPlace": 7.0,
+      "playerId": "7",
+      "currentScore": 3127
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "4.0",
-      "playerId": "6"
+      "avgPlace": 8.0,
+      "playerId": "1",
+      "currentScore": 3114
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "7.0",
-      "playerId": "7"
+      "avgPlace": 9.0,
+      "playerId": "13",
+      "currentScore": 3094
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "15.0",
-      "playerId": "8"
+      "avgPlace": 10.0,
+      "playerId": "15",
+      "currentScore": 3092
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "11.0",
-      "playerId": "9"
+      "avgPlace": 11.0,
+      "playerId": "9",
+      "currentScore": 3062
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "13.0",
-      "playerId": "10"
+      "avgPlace": 13.0,
+      "playerId": "10",
+      "currentScore": 3042
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "9.0",
-      "playerId": "13"
+      "avgPlace": 14.0,
+      "playerId": "2",
+      "currentScore": 3040
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "5.0",
-      "playerId": "14"
+      "avgPlace": 15.0,
+      "playerId": "8",
+      "currentScore": 3027
     },
     {
       "avgMoney": "0.0",
       "perc1st": "0.0",
       "perc2nd": "0.0",
       "percLast": "0.0",
-      "avgPlace": "10.0",
-      "playerId": "15"
+      "avgPlace": 17.0,
+      "playerId": "4",
+      "currentScore": 2966
     }
   ]

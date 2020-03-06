@@ -99,8 +99,8 @@ export const getInitialTeamList = () => {
     let i;
     for (i = 0; i < teamList.length; i++) {
         teamObjList[i] = {
-            teamId: i,
-            teamName: teamList[i],
+            id: i,
+            name: teamList[i],
             seed: seedOrder[i % 16],
         }
     }
