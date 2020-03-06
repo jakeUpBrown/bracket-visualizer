@@ -6,19 +6,20 @@ const PicksPage = ({
     picks,
     teams,
     users,
-    userMap,
+    selectedUserId,
 }) => {
     return (
-        <div className="overall-standings">
-            <table className="standings-table">
-                <tr>
-                    <th>seed</th>
-                    <th>team</th>
+        <div className="picks-page">
+            <table className="picks-table">
+                <tr className="picks-header-row">
+                    <th className="hidden-header"></th>
+                    <th className="text-left">team</th>
                     <th>wins</th>
                     <th>elim</th>
                     {users && Object.values(users).map((user, index) => {
+                        const className = `pick-user-col ${user.userId === selectedUserId ? 'highlighted-user' : ''}`
                         return (
-                            <th>{user.name}</th>
+                            <th className={className}>{user.name}</th>
                         )
                     })}
                 </tr>
@@ -30,8 +31,9 @@ const PicksPage = ({
                         <td>{team.isEliminated}</td>
                         {/* this should be mapping the pick value for users for team at this index */}  
                         {users && Object.values(users).map(user => {
+                            const className = `pick-user-col ${user.userId === selectedUserId ? 'highlighted-user' : ''}`
                             return (
-                                <td>{picks[user.userId].picks[index]}</td>
+                                <td className={className}>{picks[user.userId].picks[index]}</td>
                             )
                         })}
                     </tr>);
@@ -47,11 +49,13 @@ const mapStateToProps = (state) => {
         picks,
         users,
         teams,
+        selectedUserId,
     } = jsState;
     return {
         picks,
         users,
         teams,
+        selectedUserId,
     }
 }
 const disconnected = connect(mapStateToProps)(PicksPage);

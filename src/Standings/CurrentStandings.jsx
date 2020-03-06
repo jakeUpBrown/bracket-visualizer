@@ -5,11 +5,12 @@ import '../App.css';
 const CurrentStandings = ({
     currentOdds,
     users,
+    selectedUserId,
 }) => 
 (
     <div className="overall-standings">
         <table className="standings-table">
-            <tr>
+            <tr className="standings-header-row">
                 <th>name</th>
                 <th>avg money</th>
                 <th>1st</th>
@@ -19,14 +20,16 @@ const CurrentStandings = ({
                 <th>pts</th>
             </tr>
             {currentOdds && currentOdds.map(odds => {
+                const selectedUserClassName = odds.playerId === selectedUserId ? 'highlighted-user' : '';
+                const className='text-center ' + selectedUserClassName;
                 return (<tr>
-                    <td>{users[odds.playerId].name}</td>
-                    <td>${odds.avgMoney}</td>
-                    <td>{odds.perc1st}%</td>
-                    <td>{odds.perc2nd}%</td>
-                    <td>{odds.percLast}%</td>
-                    <td>{odds.avgPlace}</td>
-                    <td>{odds.currentScore}</td>
+                    <td className={selectedUserClassName}>{users[odds.playerId].name}</td>
+                    <td className={className}>${Number(odds.avgMoney).toFixed(2)}</td>
+                    <td className={className}>{Number(odds.perc1st).toFixed(1)}%</td>
+                    <td className={className}>{Number(odds.perc2nd).toFixed(1)}%</td>
+                    <td className={className}>{Number(odds.percLast).toFixed(1)}%</td>
+                    <td className={className}>{Number(odds.avgPlace).toFixed(1)}</td>
+                    <td className={className}>{odds.currentScore}</td>
                 </tr>);
             })}
         </table>
@@ -38,10 +41,12 @@ const mapStateToProps = (state) => {
     const {
         currentOdds,
         users,
+        selectedUserId,
     } = jsState;
     return {
         currentOdds,
         users,
+        selectedUserId,
     }
 }
 const disconnected = connect(mapStateToProps)(CurrentStandings);

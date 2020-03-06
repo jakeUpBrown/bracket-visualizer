@@ -4,7 +4,7 @@
 
 .App {
   display: inline-block;
-  height: 100%;
+  min-width: fit-content;
   width: 100%;
 }
 
@@ -252,7 +252,14 @@ span {
   border: 1px solid grey;
 }
 
-.standings-table {
+.picks-page {
+  background-color: white;
+  width: fit-content;
+  margin: 30px;
+  border: 1px solid grey;
+}
+
+.standings-table, .picks-table {
   background: #fdfdfd;
   border-radius:3px;
   border-collapse: collapse;
@@ -260,7 +267,7 @@ span {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.standings-table > tr {
+.standings-table > tr, .picks-table > tr {
   border-top: 1px solid #C1C3D1;
   border-bottom: 1px solid #C1C3D1;
   color:#111111;
@@ -269,8 +276,29 @@ span {
   text-shadow: 0 1px 1px rgba(256, 256, 256, 0.4);
 }
 
-tr:first-child {
-  border-top:none;
+.standings-header-row > th {
+  height: fit-content;
+  max-width: 75px;
+  min-width: 35px;
+  overflow-wrap: break-word;
+  padding: 0 5px;
+}
+
+.pick-user-col {
+  text-align: center;
+  border-left: 1px solid #555555;
+}
+
+th.pick-user-col {
+  height: fit-content;
+  min-width: 30px;
+  max-width: 75px;
+  overflow-wrap: break-word;
+  padding: 0 5px;
+}
+
+th:not(.pick-user-col) {
+  padding: 0 5px;
 }
 
 tr:last-child {
@@ -278,11 +306,17 @@ tr:last-child {
 }
 
 tr:nth-child(odd) {
-  background:#EBEBEB;
+  background:#f7f7f7;
 }
 
 tr:nth-child(even) {
   background:#fdfdfd;
+}
+
+tr:first-child {
+  border-top:none;
+  background-color: #d0d0d0;
+  border-bottom: 1px solid #111111;
 }
 
 tr:last-child td:first-child {
@@ -294,7 +328,6 @@ tr:last-child td:last-child {
 }
 
 td {
-  background:#FFFFFF;
   padding:3px;
   padding-left: 5px;
   padding-right: 5px;
@@ -307,26 +340,19 @@ td:last-child {
   border-right: 0px;
 }
 
-th.text-left {
+.text-left {
   text-align: left;
 }
 
-th.text-center {
+.text-center {
   text-align: center;
 }
 
-th.text-right {
+.text-right {
   text-align: right;
 }
 
-td.text-left {
-  text-align: left;
-}
-
-td.text-center {
-  text-align: center;
-}
-
-td.text-right {
-  text-align: right;
+.highlighted-user {
+  background-color: rgba(0,0,0,.17);
+  font-weight: bold;
 }
