@@ -36,5 +36,3 @@ export const getStartingGameIdByColumn = (roundNum, left) => {
 }
 
 export const isColumnChampionship = roundIndex => roundIndex === 5;
-
-export const hasGameBeenPlayed = game => game.team1Score && game.team2Score;

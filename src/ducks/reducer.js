@@ -1,17 +1,19 @@
 import { fromJS } from 'immutable';
 import picks from '../resources/picks.json';
-import teamList from '../resources/teamlist.json';
-import seedOrder from '../resources/seedOrder.json';
+import teams from '../resources/teams.json';
 import currentOdds from '../resources/currentOdds.json';
 import users from '../resources/users.json';
+import games from '../resources/games.json';
 
 const createGame = (gameId, team1Id, team2Id, team1Score, team2Score) => {
     return {
         gameId,
         team1Id,
         team2Id,
-        team1Score,
-        team2Score,
+        //team1Score,
+        //team2Score,
+        team1Won: !team1Score ? undefined : team1Score > team2Score,
+        allSlotsFilled: team1Id !== undefined && team2Id !== undefined,
     };
 }
 
@@ -93,44 +95,47 @@ const gameList = [
     // createGame(63, 32),
 ]
 
-
-export const getInitialTeamList = () => {
-    let teamObjList = [];
-    let i;
-    for (i = 0; i < teamList.length; i++) {
-        teamObjList[i] = {
-            id: i,
-            name: teamList[i],
-            seed: seedOrder[i % 16],
-        }
-    }
-    return teamObjList;
-}
-
 const initialState = fromJS({
-    teams: getInitialTeamList(),
-    games: gameList,
+    teams,
+    games: games,
     selectedUserId: '0',
     users,
     picks,
     currentOdds,
+    selectedGameId: undefined,
 });
 
 const getInitState = () => {
     const js = initialState.toJS();
     js.games[0].meta = {
         users: {
-            0: [
+            '0': [
                 {
                     teamId: 0,
-                    expectedMoney: 15.43,
+                    avgMoney: 15.43,
                     perc1st: 12.12,
                     perc2nd: 4.32,
                     percLast: 0.00,    
                 },
                 {
                     teamId: 1,
-                    expectedMoney: 18.43,
+                    avgMoney: 18.43,
+                    perc1st: 11.12,
+                    perc2nd: 3.32,
+                    percLast: 1.00,    
+                }
+            ],
+            '1': [
+                {
+                    teamId: 0,
+                    avgMoney: 18.43,
+                    perc1st: 12.12,
+                    perc2nd: 4.32,
+                    percLast: 0.00,    
+                },
+                {
+                    teamId: 1,
+                    avgMoney: 12.43,
                     perc1st: 11.12,
                     perc2nd: 3.32,
                     percLast: 1.00,    

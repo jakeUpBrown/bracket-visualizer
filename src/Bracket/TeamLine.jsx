@@ -3,7 +3,6 @@ import '../App.css';
 import { connect } from 'react-redux';
 import { teamIndexSelector } from '../utilities/selectors'
 import { setSelectedTeamLine, setSelectedGameId } from '../ducks/reducer'
-import { hasGameBeenPlayed } from './utils/Helpers';
 
 class TeamLine extends PureComponent {
     constructor(props)
@@ -17,7 +16,7 @@ class TeamLine extends PureComponent {
     };
 
     handleTeamLineClicked = () => {
-        if (this.props.gamePlayed) {
+        if (this.props.allSlotsFilled) {
             if(this.props.gameSelected) this.props.setSelectedGameId();
             else this.props.setSelectedGameId(this.props.gameId)
             return;
@@ -34,8 +33,11 @@ class TeamLine extends PureComponent {
         let teamLineClass = `teamline ${this.props.isTeam1 ? 'topTeam ' : 'bottomTeam '}`;
         if (isChampLabel) {
             teamLineClass += 'champ-line ';
-        } else if (this.props.gamePlayed) {
-            teamLineClass += 'game-played ' + (this.props.teamWon ? ' team-won' : 'team-lost');
+        } else if (this.props.allSlotsFilled) {
+            teamLineClass += 'all-slots-filled ';
+        }
+        if (this.props.teamWon !== undefined) {
+            teamLineClass += (this.props.teamWon ? ' team-won' : 'team-lost');
         }
         if (this.props.teamLineSelected) teamLineClass += ' selected-team-line';
 
@@ -77,8 +79,8 @@ const mapStateToProps = (state, { gameId, isTeam1 }) => {
     return {
         score,
         teamInfo: jsState.teams[teamIndex],
-        gamePlayed: hasGameBeenPlayed(game),
-        teamWon: score > (isTeam1 ? game.team2Score : game.team1Score),
+        allSlotsFilled: game.team1Id !== undefined && game.team2Id !== undefined,
+        teamWon: game.team1Won === isTeam1,
         teamLineSelected,
         gameSelected,
     }

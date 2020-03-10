@@ -13,7 +13,7 @@ const PicksPage = ({
             <table className="picks-table">
                 <tr className="picks-header-row">
                     <th className="hidden-header"></th>
-                    <th className="text-left">team</th>
+                    <th className="text-left">school</th>
                     <th>wins</th>
                     <th>elim</th>
                     {users && Object.values(users).map((user, index) => {

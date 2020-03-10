@@ -2,6 +2,10 @@
   background-color: #f7f7f7;
 }
 
+.content-area {
+  padding: 20px;
+}
+
 .App {
   display: inline-block;
   min-width: fit-content;
@@ -21,10 +25,10 @@ span {
 .bracket-container {
   text-align: center;
   position: relative;
-  margin: 15px;
   height: 700px;
   background-color: #eeeeee;
   min-width: 1100px;
+  max-width: 1600px;
   font-size: 10px;
   padding: 10px;
   border: 1px solid #333333;
@@ -57,7 +61,7 @@ span {
   background-color: #dddddd;
 }
 
-.teamline:not(.game-played):not(.selected-team-line):hover {
+.teamline:not(.all-slots-filled):not(.selected-team-line):hover {
   background-color: #dddddd;
 }
 
@@ -245,21 +249,17 @@ span {
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,.3);
 }
 
-.overall-standings {
+.metadata-table-section {
+  margin-top: 15px;
+}
+
+.overall-standings, .picks-page {
   background-color: white;
   width: fit-content;
-  margin: 30px;
   border: 1px solid grey;
 }
 
-.picks-page {
-  background-color: white;
-  width: fit-content;
-  margin: 30px;
-  border: 1px solid grey;
-}
-
-.standings-table, .picks-table {
+.standings-table, .picks-table, .metadata-table {
   background: #fdfdfd;
   border-radius:3px;
   border-collapse: collapse;
@@ -267,7 +267,7 @@ span {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.standings-table > tr, .picks-table > tr {
+.standings-table > tr, .picks-table > tr, .metadata-table > tr {
   border-top: 1px solid #C1C3D1;
   border-bottom: 1px solid #C1C3D1;
   color:#111111;
