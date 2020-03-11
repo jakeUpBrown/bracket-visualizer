@@ -36,11 +36,10 @@ const UserSelector = ({ selectedUserId, users, setSelectedUserId, history, locat
 
 
 const mapStateToProps = (state) => {
-    const jsState = state.toJS();
     const {
         selectedUserId,
         users,
-    } = jsState;
+    } = state.toJS();
     console.log('mapStateToProps', selectedUserId, users);
     return {
         selectedUserId,

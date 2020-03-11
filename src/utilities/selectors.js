@@ -5,10 +5,9 @@ export const teamIndexSelector = (state, gameIndex, isTeam1) => {
 }
 
 export const getUserNameMap = (state) => {
-    const jsState = state.toJS();
     const {
         users
-    } = jsState;
+    } = state.toJS();
     const userMap = {}
     users.forEach(element => {
         userMap[element.userId] = element.name

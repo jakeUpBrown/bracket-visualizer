@@ -20,10 +20,10 @@ const CurrentStandings = ({
                 <th>pts</th>
             </tr>
             {currentOdds && currentOdds.map(odds => {
-                const selectedUserClassName = odds.playerId === selectedUserId ? 'highlighted-user' : '';
+                const selectedUserClassName = odds.userId === selectedUserId ? 'highlighted-user' : '';
                 const className='text-center ' + selectedUserClassName;
                 return (<tr>
-                    <td className={selectedUserClassName}>{users[odds.playerId].name}</td>
+                    <td className={selectedUserClassName}>{users[odds.userId].name}</td>
                     <td className={className}>${Number(odds.avgMoney).toFixed(2)}</td>
                     <td className={className}>{Number(odds.perc1st).toFixed(1)}%</td>
                     <td className={className}>{Number(odds.perc2nd).toFixed(1)}%</td>
@@ -37,12 +37,11 @@ const CurrentStandings = ({
 );
 
 const mapStateToProps = (state) => {
-    const jsState = state.toJS();
     const {
         currentOdds,
         users,
         selectedUserId,
-    } = jsState;
+    } = state.toJS();
     return {
         currentOdds,
         users,

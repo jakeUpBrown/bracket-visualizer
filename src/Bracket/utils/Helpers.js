@@ -36,3 +36,8 @@ export const getStartingGameIdByColumn = (roundNum, left) => {
 }
 
 export const isColumnChampionship = roundIndex => roundIndex === 5;
+
+export const getMetaTypeFromIsTeam1Selected = isTeam1Selected => {
+    if (isTeam1Selected === undefined) return 'GAME';
+    return isTeam1Selected ? 'TEAM1' : 'TEAM2';
+}

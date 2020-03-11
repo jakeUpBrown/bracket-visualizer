@@ -5,7 +5,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 1.0,
-    "playerId": "12",
+    "userId": "12",
     "currentScore": 2993
   },
   {
@@ -14,7 +14,7 @@
     "perc2nd": "57.4",
     "percLast": "0.0",
     "avgPlace": 2.56,
-    "playerId": "11",
+    "userId": "11",
     "currentScore": 2966
   },
   {
@@ -23,7 +23,7 @@
     "perc2nd": "42.6",
     "percLast": "0.0",
     "avgPlace": 2.57,
-    "playerId": "5",
+    "userId": "5",
     "currentScore": 2969
   },
   {
@@ -32,7 +32,7 @@
     "perc2nd": "0.0",
     "percLast": "100.0",
     "avgPlace": 16.0,
-    "playerId": "0",
+    "userId": "0",
     "currentScore": 2705
   },
   {
@@ -41,7 +41,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 4.61,
-    "playerId": "14",
+    "userId": "14",
     "currentScore": 2960
   },
   {
@@ -50,7 +50,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 4.75,
-    "playerId": "6",
+    "userId": "6",
     "currentScore": 2963
   },
   {
@@ -59,7 +59,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 5.42,
-    "playerId": "3",
+    "userId": "3",
     "currentScore": 2955
   },
   {
@@ -68,7 +68,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 6.89,
-    "playerId": "7",
+    "userId": "7",
     "currentScore": 2947
   },
   {
@@ -77,7 +77,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 8.0,
-    "playerId": "1",
+    "userId": "1",
     "currentScore": 2940
   },
   {
@@ -86,7 +86,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 9.19,
-    "playerId": "13",
+    "userId": "13",
     "currentScore": 2915
   },
   {
@@ -95,7 +95,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 9.97,
-    "playerId": "15",
+    "userId": "15",
     "currentScore": 2918
   },
   {
@@ -104,7 +104,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 10.74,
-    "playerId": "9",
+    "userId": "9",
     "currentScore": 2896
   },
   {
@@ -113,7 +113,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 12.25,
-    "playerId": "10",
+    "userId": "10",
     "currentScore": 2868
   },
   {
@@ -122,7 +122,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 12.75,
-    "playerId": "2",
+    "userId": "2",
     "currentScore": 2875
   },
   {
@@ -131,7 +131,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 14.0,
-    "playerId": "8",
+    "userId": "8",
     "currentScore": 2859
   },
   {
@@ -140,7 +140,7 @@
     "perc2nd": "0.0",
     "percLast": "0.0",
     "avgPlace": 15.0,
-    "playerId": "4",
+    "userId": "4",
     "currentScore": 2795
   }
 ]

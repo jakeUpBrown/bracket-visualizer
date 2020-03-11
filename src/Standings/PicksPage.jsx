@@ -44,13 +44,12 @@ const PicksPage = ({
 }
 
 const mapStateToProps = (state) => {
-    const jsState = state.toJS();
     const {
         picks,
         users,
         teams,
         selectedUserId,
-    } = jsState;
+    } = state.toJS();
     return {
         picks,
         users,

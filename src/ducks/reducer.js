@@ -5,6 +5,7 @@ import currentOdds from '../resources/currentOdds.json';
 import users from '../resources/users.json';
 import games from '../resources/games.json';
 
+/*
 const createGame = (gameId, team1Id, team2Id, team1Score, team2Score) => {
     return {
         gameId,
@@ -16,6 +17,7 @@ const createGame = (gameId, team1Id, team2Id, team1Score, team2Score) => {
         allSlotsFilled: team1Id !== undefined && team2Id !== undefined,
     };
 }
+
 
 const gameList = [
     createGame(0, 0, 1, 54, 74),
@@ -94,6 +96,7 @@ const gameList = [
     createGame(63, undefined),
     // createGame(63, 32),
 ]
+*/
 
 const initialState = fromJS({
     teams,
@@ -106,7 +109,10 @@ const initialState = fromJS({
 });
 
 const getInitState = () => {
+    let now = new Date();
     const js = initialState.toJS();
+    let after = new Date();
+    console.log('time it took: ', (after.getMilliseconds() - now.getMilliseconds()));
     js.games[0].meta = {
         users: {
             '0': [
