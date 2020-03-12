@@ -3,6 +3,7 @@ import '../App.css';
 import { connect } from 'react-redux';
 import { teamIndexSelector } from '../utilities/selectors'
 import { setSelectedTeamLine, setSelectedGameId } from '../ducks/reducer'
+import { gameHasAllSlotsFilled } from './utils/Helpers'
 
 class TeamLine extends PureComponent {
     constructor(props)
@@ -79,7 +80,7 @@ const mapStateToProps = (state, { gameId, isTeam1 }) => {
     return {
         score,
         teamInfo: jsState.teams[teamIndex],
-        allSlotsFilled: game.team1Id !== undefined && game.team2Id !== undefined,
+        allSlotsFilled: gameHasAllSlotsFilled(game),
         teamWon: game.team1Won === isTeam1,
         teamLineSelected,
         gameSelected,

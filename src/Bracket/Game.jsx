@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css';
 import TeamLine from './TeamLine.jsx';
 import { connect } from 'react-redux';
+import { gameHasAllSlotsFilled } from './utils/Helpers'
 
 const game = 
 ({ gameId, selectedGame, allSlotsFilled }) => {
@@ -19,7 +20,7 @@ const mapStateToProps = (state, { gameId }) => {
     const jsState = state.toJS();
     const game = jsState.games[gameId];
     return {
-        allSlotsFilled: game.team1Id !== undefined && game.team2Id !== undefined,
+        allSlotsFilled: gameHasAllSlotsFilled(game),
         selectedGame: (gameId === jsState.selectedGameId && jsState.team1Selected === undefined),
     };
 };
