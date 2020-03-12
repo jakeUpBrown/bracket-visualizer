@@ -11,6 +11,7 @@ const MetaDataTable = ({
     team1Selected,
     game,
     teams,
+    userPicks,
 }) => {
     console.log(game);
     // TODO: remove selectedUserId check here, as every user should be populated.
@@ -30,14 +31,34 @@ const MetaDataTable = ({
             metaType,
         } = getNextRoundMetaDataIndices(game)
         gameMetaData = gamesMetaData[selectedUserId][nextRoundGameId][metaType];
-        console.log('next round game meta data', gameMetaData);
+    }
+
+    const gameHasBeenPlayed = game.team1Won !== undefined;
+    let firstRowValues;
+    if (gameHasBeenPlayed) {
+        const winningTeamId = game.team1Won ? game.team1Id : game.team2Id;
+        const winningTeam = teams[winningTeamId];
+        firstRowValues = [
+            winningTeam.seed,
+            winningTeam.name,
+            userPicks[winningTeamId],
+        ];
+    } else {
+        firstRowValues = 
+        [
+            '',
+            '(current outlook)',
+            '',
+        ]
     }
 
     return (
         <div className="metadata-table-section">
             <table className="metadata-table">
                 <tr className="metadata-header-row">
+                    <th>sd</th>
                     <th>school</th>
+                    <th>pts</th>
                     {/*<th>odds</th>*/}
                     <th>avg money</th>
                     <th>1st</th>
@@ -45,9 +66,8 @@ const MetaDataTable = ({
                     <th>last</th>
                     <th>avg place</th>
                 </tr>
-                <tr>
-                    {/*<td></td>*/}
-                    <td>(current outlook)</td>
+                <tr className="current-outlook-row">
+                    {firstRowValues.map(val => <td>{val}</td>)}
                     <td>${currentOddsForUser.avgMoney}</td>
                     <td>{currentOddsForUser.perc1st}%</td>
                     <td>{currentOddsForUser.perc2nd}%</td>
@@ -55,9 +75,12 @@ const MetaDataTable = ({
                     <td>{currentOddsForUser.avgPlace}</td>
                 </tr>
                 {gameMetaData && gameMetaData.map((metaData, index) => {
+                    const team = teams[metaData.teamId]
                     return (<tr>
-                        <td>{teams[metaData.teamId].name}</td>
+                        <td>{team.seed}</td>
+                        <td>{team.name}</td>
                         {/*<td>{game.meta ? game.meta.teamOdds[metaData.teamId] : ''}%</td>*/}
+                        <td>{userPicks[metaData.teamId]}</td>
                         <td>${metaData.avgMoney}</td>
                         <td>{metaData.perc1st}%</td>
                         <td>{metaData.perc2nd}%</td>
@@ -78,6 +101,7 @@ const mapStateToProps = (state) => {
         team1Selected,
         games,
         teams,
+        picks,
     } = state.toJS();
     const game = games[selectedGameId];
     const currentOddsForUser = currentOdds.find(x => x.userId === selectedUserId);
@@ -88,6 +112,7 @@ const mapStateToProps = (state) => {
         team1Selected,
         game,
         teams,
+        userPicks: picks[selectedUserId].picks,
     }
 }
 const disconnected = connect(mapStateToProps)(MetaDataTable);

@@ -221,6 +221,10 @@ span {
   position: relative;
 }
 
+.current-outlook-row > td {
+  font-weight: bolder;
+}
+
 .champ-line {
   font-weight: bolder;
   border: 1px solid #444444;
