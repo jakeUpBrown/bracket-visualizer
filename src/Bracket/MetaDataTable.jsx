@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { getMetaTypeFromIsTeam1Selected } from './utils/Helpers'
+import { getMetaTypeFromIsTeam1Selected, gameHasAllSlotsFilled, getNextRoundMetaDataIndices } from './utils/Helpers'
 import Tester from './utils/ObjectConstants'
 import '../App.css';
 
@@ -21,9 +21,17 @@ const MetaDataTable = ({
     const gamesMetaData = Tester;
     let metaType = getMetaTypeFromIsTeam1Selected(team1Selected);
 
-    const gameMetaData = gamesMetaData[selectedUserId][Number(selectedGameId)][metaType];
-    console.log(metaType)
-    console.log('meta', gameMetaData)
+    let gameMetaData = gamesMetaData[selectedUserId][Number(selectedGameId)][metaType];
+    if (!gameMetaData && gameHasAllSlotsFilled(game)) {
+        // try to get the game_id and metaType of the next round slot
+        // this is because this should be equivalent to this current game if it hasn't been played.
+        const {
+            nextRoundGameId,
+            metaType,
+        } = getNextRoundMetaDataIndices(game)
+        gameMetaData = gamesMetaData[selectedUserId][nextRoundGameId][metaType];
+        console.log('next round game meta data', gameMetaData);
+    }
 
     return (
         <div className="metadata-table-section">
