@@ -152,7 +152,7 @@ span {
   text-align: left;
 }
 
-.finals-team-1:before {
+.finals-team-1:hover:before {
   content:"\A";
   border-style: solid;
   border-width: 5px 4px 5px 0;
@@ -162,10 +162,15 @@ span {
 }
 
 .finals-team-1.selected-team-line:before {
-  border-color: transparent #111111 transparent transparent;
+  content:"\A";
+  border-style: solid;
+  border-width: 5px 4px 5px 0;
+  border-color: transparent #222222 transparent transparent;
+  position: absolute;
+  left: -6px;
 }
 
-.finals-team-2:after {
+.finals-team-2:hover:after {
   content:"\A";
   border-style: solid;
   border-width: 5px 0 5px 4px;
@@ -174,8 +179,14 @@ span {
   right: -6px;
 }
 
+
 .finals-team-2.selected-team-line:after {
-  border-color: transparent transparent transparent #111111;
+  content:"\A";
+  border-style: solid;
+  border-width: 5px 0 5px 4px;
+  border-color: transparent transparent transparent #222222;
+  position: absolute;
+  right: -6px;
 }
 
 .round-container {
