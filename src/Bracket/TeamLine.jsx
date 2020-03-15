@@ -31,12 +31,17 @@ class TeamLine extends PureComponent {
     
     render() {
         const isChampLabel = this.props.gameId === 63;
+        const isFinalsGame = this.props.gameId === 62;
         let teamLineClass = `teamline ${this.props.isTeam1 ? 'topTeam ' : 'bottomTeam '}`;
         if (isChampLabel) {
             teamLineClass += 'champ-line ';
         } else if (this.props.allSlotsFilled) {
             teamLineClass += 'all-slots-filled ';
         }
+        if (isFinalsGame) {
+            teamLineClass += (this.props.isTeam1) ? 'finals-team-1 ' : 'finals-team-2 ';
+        }
+        
         if (this.props.teamWon !== undefined) {
             teamLineClass += (this.props.teamWon ? ' team-won' : 'team-lost');
         }

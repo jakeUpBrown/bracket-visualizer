@@ -1,17 +1,43 @@
-:root {
-  background-color: #f7f7f7;
+.App {
+  display: inline-block;
+  text-align: center;
+  font-family: Tahoma, Verdana, sans-serif;
+  width: fit-content;
+  min-width: fit-content;
+  max-width: 1700px;
+  min-height:400px;
+  width: 100%;
+  margin-bottom: 25px;
+  background-color: #faf7f3;
+  box-shadow: 0px 0px 10px 4px rgb(0,0,0,.2);
+}
+
+.background {
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #dddddd;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  padding-left: calc(100vw - 100%);
+  overflow-y: scroll;
+}
+
+
+#root {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
 }
 
 .content-area {
+  background-color: #ffffff;
   padding: 20px;
 }
-
-.App {
-  display: inline-block;
-  min-width: fit-content;
-  width: 100%;
-}
-
 
 span {
   -webkit-touch-callout: none;
@@ -124,6 +150,32 @@ span {
 .team-name {
   flex: 1;
   text-align: left;
+}
+
+.finals-team-1:before {
+  content:"\A";
+  border-style: solid;
+  border-width: 5px 4px 5px 0;
+  border-color: transparent #888888 transparent transparent;
+  position: absolute;
+  left: -6px;
+}
+
+.finals-team-1.selected-team-line:before {
+  border-color: transparent #111111 transparent transparent;
+}
+
+.finals-team-2:after {
+  content:"\A";
+  border-style: solid;
+  border-width: 5px 0 5px 4px;
+  border-color: transparent transparent transparent #888888;
+  position: absolute;
+  right: -6px;
+}
+
+.finals-team-2.selected-team-line:after {
+  border-color: transparent transparent transparent #111111;
 }
 
 .round-container {
@@ -251,6 +303,12 @@ span {
 .selected-game {
   background-color: #cccccc;
   box-shadow: 1px 1px 3px 1px rgba(0,0,0,.3);
+}
+
+.metadata-header-row > th {
+  height: fit-content;
+  width: min-content;
+  overflow-wrap: break-word;
 }
 
 .metadata-table-section {

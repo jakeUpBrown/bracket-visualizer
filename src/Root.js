@@ -10,14 +10,16 @@ import './App.css';
 const App = 
 ({ store }) => {
   return (
-    <Provider store={store}>
-      <BrowserRouter forceRefresh={false}>
-        <div className="App">
-        <Toolbar />
-        <Route path="/" component={ContentArea} />
-        </div>
-      </BrowserRouter>
-    </Provider>
+    <div className="background">
+      <Provider store={store}>
+        <BrowserRouter forceRefresh={false}>
+          <div className="App">
+          <Toolbar />
+          <Route path="/" component={ContentArea} />
+          </div>
+        </BrowserRouter>
+      </Provider>
+    </div>
   );
 };
 
