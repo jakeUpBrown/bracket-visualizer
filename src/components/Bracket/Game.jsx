@@ -5,7 +5,11 @@ import { connect } from 'react-redux';
 import { gameHasAllSlotsFilled } from '../../utilities/Helpers'
 
 const game = 
-({ gameId, selectedGame, allSlotsFilled }) => {
+({ 
+    gameId,
+    selectedGame, 
+    allSlotsFilled 
+}) => {
     return (
         <div className="game-container">
             <div className={`game ${allSlotsFilled ? 'finished' : ''} ${selectedGame ? 'selected-game' : ''}`}>

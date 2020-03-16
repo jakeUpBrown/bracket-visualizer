@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BracketPage from './components/Bracket/BracketPage';
 import { Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
-import PicksPage from './components/Standings/PicksPage';
+import PicksPage from './components/Picks/PicksPage';
 import CurrentStandings from './components/Standings/CurrentStandings';
 import RoundOutlookPage from './components/RoundOutlook/RoundOutlookPage';
 import BadBeatsPage from './components/BadBeats/BadBeatsPage';

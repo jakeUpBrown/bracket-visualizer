@@ -24,7 +24,7 @@ export const getRoundNumFromGameId = gameId => {
 export const isLeftSide = columnIndex => columnIndex < 5;
 
 export const getGamesPlayedInPreviousRounds = roundNum => {
-    return 64 - Math.pow(2, 6 - roundNum);
+    return 64 - Math.pow(2, TOTAL_ROUNDS - roundNum);
 }
 
 export const getGameId = (roundNum, left, columnOffset) => getStartingGameIdByColumn(roundNum, left) + columnOffset

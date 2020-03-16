@@ -8,7 +8,7 @@ import {
     getOddsString,
     getRoundNumFromGameId
 } from '../../utilities/Helpers'
-import Tester from '../../utilities/ObjectConstants'
+import gamesMetaData from '../../utilities/ObjectConstants'
 import '../../App.css';
 
 const MetaDataTable = ({
@@ -27,7 +27,6 @@ const MetaDataTable = ({
         return <div className="metadata-table-section" />
     }
 
-    const gamesMetaData = Tester;
     let metaType = getMetaTypeFromIsTeam1Selected(team1Selected);
 
     const gameSlotsFilled = gameHasAllSlotsFilled(game)
