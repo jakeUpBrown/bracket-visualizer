@@ -34,7 +34,7 @@ export const setSelectedGameId = selectedGameId => (
     }
 );
 
-export const setSelectedTeamLine = (selectedGameId, team1Selected) => (
+export const setSelectedTeamLine = ({ selectedGameId, team1Selected }) => (
     { 
         type: "SELECTED_TEAMLINE_SPREAD",
          payload: { 

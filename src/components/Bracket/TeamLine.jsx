@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import '../../App.css';
 import { connect } from 'react-redux';
 import { teamIndexSelector } from '../../utilities/selectors'
-import { setSelectedTeamLine, setSelectedGameId } from '../../ducks/reducer'
+import { setSelectedTeamLineFuncer, setSelectedGameIdFuncer } from '../../utilities/mappedActions'
 import { gameHasAllSlotsFilled } from '../../utilities/Helpers'
 
 class TeamLine extends PureComponent {
@@ -23,9 +23,9 @@ class TeamLine extends PureComponent {
             return;
         }
         if (this.props.teamLineSelected) {
-            this.props.setSelectedTeamLine();
+            this.props.setSelectedTeamLine({});
         } else {
-            this.props.setSelectedTeamLine(this.props.gameId, this.props.isTeam1);
+            this.props.setSelectedTeamLine({ selectedGameId: this.props.gameId, team1Selected: this.props.isTeam1 });
         }
     }
     
@@ -94,8 +94,8 @@ const mapStateToProps = (state, { gameId, isTeam1 }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setSelectedTeamLine: (gameId, isTeam1) => dispatch(setSelectedTeamLine(gameId, isTeam1)),
-        setSelectedGameId: gameId => dispatch(setSelectedGameId(gameId)),
+        setSelectedTeamLine: setSelectedTeamLineFuncer(dispatch),
+        setSelectedGameId: setSelectedGameIdFuncer(dispatch),
     }
 }
 

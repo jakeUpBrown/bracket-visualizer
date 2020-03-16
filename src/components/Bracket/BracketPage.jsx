@@ -4,13 +4,13 @@ import Bracket from './Bracket';
 import MetaDataTable from './MetaDataTable';
 import '../../App.css';
 import { Component } from 'react';
-import { setSelectedTeamLine } from '../../ducks/reducer';
+import { setSelectedGameIdFuncer } from '../../utilities/mappedActions';
 import { connect } from 'react-redux';
 
 class BracketPage extends Component {
 
     componentWillUnmount() {
-        this.props.resetSelectedGameId();
+        this.props.setSelectedGameId();
     }
 
     render() {
@@ -27,7 +27,7 @@ class BracketPage extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        resetSelectedGameId: () => dispatch(setSelectedTeamLine()),
+        setSelectedGameId: setSelectedGameIdFuncer(dispatch),
     }
 };
 

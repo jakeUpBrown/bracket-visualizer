@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { setSelectedUserId } from '../../ducks/reducer';
+import { setSelectedUserIdFuncer } from '../../utilities/mappedActions';
 import { withRouter } from "react-router-dom";
 import * as QueryString from "query-string"
 
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setSelectedUserId: value => dispatch(setSelectedUserId(value))
+        setSelectedUserId: setSelectedUserIdFuncer(dispatch),
     }
 }
 

@@ -6,7 +6,7 @@ import PicksPage from './components/Picks/PicksPage';
 import CurrentStandings from './components/Standings/CurrentStandings';
 import RoundOutlookPage from './components/RoundOutlook/RoundOutlookPage';
 import BadBeatsPage from './components/BadBeats/BadBeatsPage';
-import { setSelectedUserId } from './ducks/reducer';
+import { setSelectedUserIdFuncer } from './utilities/mappedActions';
 import * as QueryString from "query-string"
 
 import './App.css';
@@ -39,7 +39,7 @@ class ContentArea extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        setSelectedUserId: value => dispatch(setSelectedUserId(value))
+        setSelectedUserId: setSelectedUserIdFuncer(dispatch),
     }
 }
 
