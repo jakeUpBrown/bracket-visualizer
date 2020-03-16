@@ -4,6 +4,7 @@ import teams from '../resources/teams.json';
 import currentOdds from '../resources/currentOdds.json';
 import users from '../resources/users.json';
 import games from '../resources/games.json';
+import teamRoundOdds from '../resources/teamRoundOdds.json';
 
 /*
 const createGame = (gameId, team1Id, team2Id, team1Score, team2Score) => {
@@ -106,6 +107,7 @@ const initialState = fromJS({
     picks,
     currentOdds,
     selectedGameId: undefined,
+    teamRoundOdds,
 });
 
 const getInitState = () => {

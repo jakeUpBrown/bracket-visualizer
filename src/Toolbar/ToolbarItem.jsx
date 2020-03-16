@@ -13,8 +13,9 @@ const ToolbarItem =({
         pathname: link,
         search: location.search,
     }
+    const toolbarItemSelected = location.pathname === link;
     return (
-        <div className="toolbar-link">
+        <div className={`toolbar-link ${toolbarItemSelected ? 'selected-toolbar-item' : ''}`}>
             <Link to={toDescriptor} className="dropdown-link">
             <span>{name}</span>
             </Link>

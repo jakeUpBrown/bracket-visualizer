@@ -15,7 +15,7 @@ const PicksPage = ({
                     <th className="hidden-header"></th>
                     <th className="text-left">school</th>
                     <th>wins</th>
-                    <th>elim</th>
+                    {/*<th>elim</th>*/}
                     {users && Object.values(users).map((user, index) => {
                         const className = `pick-user-col ${user.userId === selectedUserId ? 'highlighted-user' : ''}`
                         return (
@@ -25,10 +25,10 @@ const PicksPage = ({
                 </tr>
                 {teams && teams.map((team, index) => {
                     return (<tr>
-                        <td>{team.seed}</td>
+                        <td className='text-center'>{team.seed}</td>
                         <td>{team.name}</td>
-                        <td>{team.wins}</td>
-                        <td>{team.isEliminated}</td>
+                        <td className='text-center'>{team.wins}</td>
+                        {/*<td>{team.isEliminated}</td>*/}
                         {/* this should be mapping the pick value for users for team at this index */}  
                         {users && Object.values(users).map(user => {
                             const className = `pick-user-col ${user.userId === selectedUserId ? 'highlighted-user' : ''}`

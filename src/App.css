@@ -37,6 +37,7 @@ body {
 .content-area {
   background-color: #ffffff;
   padding: 20px;
+  min-height: 80vh;
 }
 
 span {
@@ -85,6 +86,7 @@ span {
 
 .game.finished:not(.selected-game):hover {
   background-color: #dddddd;
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,.3);
 }
 
 .teamline:not(.all-slots-filled):not(.selected-team-line):hover {
@@ -313,7 +315,7 @@ span {
 
 .selected-game {
   background-color: #cccccc;
-  box-shadow: 1px 1px 3px 1px rgba(0,0,0,.3);
+  box-shadow: 1px 1px 3px 1px rgba(0,0,0,.4);
 }
 
 .metadata-header-row > th {
