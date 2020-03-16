@@ -22,7 +22,6 @@ const MetaDataTable = ({
     teamRoundOdds,
 }) => {
     console.log(game);
-    // TODO: remove selectedUserId check here, as every user should be populated.
     if (!game) {
         return <div className="metadata-table-section" />
     }

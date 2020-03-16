@@ -35,16 +35,11 @@ class TeamLine extends PureComponent {
         let teamLineClass = `teamline ${this.props.isTeam1 ? 'topTeam ' : 'bottomTeam '}`;
         if (isChampLabel) {
             teamLineClass += 'champ-line ';
-        } else if (this.props.allSlotsFilled) {
-            teamLineClass += 'all-slots-filled ';
+        } else {
+            if (isFinalsGame) teamLineClass += (this.props.isTeam1) ? 'finals-team-1 ' : 'finals-team-2 ';
+            if (this.props.allSlotsFilled) teamLineClass += 'all-slots-filled ';
         }
-        if (isFinalsGame) {
-            teamLineClass += (this.props.isTeam1) ? 'finals-team-1 ' : 'finals-team-2 ';
-        }
-        
-        if (this.props.teamWon !== undefined) {
-            teamLineClass += (this.props.teamWon ? ' team-won' : 'team-lost');
-        }
+        if (this.props.teamWon !== undefined) teamLineClass += (this.props.teamWon ? ' team-won' : 'team-lost');
         if (this.props.teamLineSelected) teamLineClass += ' selected-team-line';
 
         if (!this.props.teamInfo) {
@@ -77,14 +72,20 @@ class TeamLine extends PureComponent {
 
 const mapStateToProps = (state, { gameId, isTeam1 }) => {
     const teamIndex = teamIndexSelector(state, gameId, isTeam1);
-    const jsState = state.toJS();
-    let game = jsState.games[gameId];
+    const {
+        selectedGameId,
+        games,
+        team1Selected,
+        teams,
+    } = state.toJS();
+    const game = games[gameId];
+    const teamInfo = teams[teamIndex];
     const score = (isTeam1 ? game.team1Score : game.team2Score);
-    const gameSelected = gameId === jsState.selectedGameId;
-    const teamLineSelected = gameSelected && isTeam1 === jsState.team1Selected;
+    const gameSelected = gameId === selectedGameId;
+    const teamLineSelected = gameSelected && isTeam1 === team1Selected;
     return {
         score,
-        teamInfo: jsState.teams[teamIndex],
+        teamInfo,
         allSlotsFilled: gameHasAllSlotsFilled(game),
         teamWon: game.team1Won === isTeam1,
         teamLineSelected,
