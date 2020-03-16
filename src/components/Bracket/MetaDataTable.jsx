@@ -21,7 +21,6 @@ const MetaDataTable = ({
     userPicks,
     teamRoundOdds,
 }) => {
-    console.log(game);
     if (!game) {
         return <div className="metadata-table-section" />
     }
@@ -67,41 +66,45 @@ const MetaDataTable = ({
     return (
         <div className="metadata-table-section">
             <table className="metadata-table">
-                <tr className="metadata-header-row">
-                    <th>sd</th>
-                    <th>school</th>
-                    <th>pts</th>
-                    <th>odds</th>
-                    <th>avg money</th>
-                    <th>1st</th>
-                    <th>2nd</th>
-                    <th>last</th>
-                    <th>avg place</th>
-                </tr>
-                <tr className="current-outlook-row">
-                    {firstRowValues.map(val => <td>{val}</td>)}
-                    <td className='text-center'>{getMoneyString(currentOddsForUser.avgMoney)}</td>
-                    <td className='text-center'>{currentOddsForUser.perc1st}%</td>
-                    <td className='text-center'>{currentOddsForUser.perc2nd}%</td>
-                    <td className='text-center'>{currentOddsForUser.percLast}%</td>
-                    <td className='text-center'>{currentOddsForUser.avgPlace}</td>
-                </tr>
-                {gameMetaData && gameMetaData.map((metaData, index) => {
-                    const team = teams[metaData.teamId]
-                    return (<tr>
-                        <td>{team.seed}</td>
-                        <td>{team.name}</td>
-                        <td>{userPicks[metaData.teamId]}</td>
-                        <td className='text-center'>
-                            {getOddsString(teamRoundOdds[metaData.teamId].oddsByRound[oddsRoundNum])}
-                        </td>
-                        <td className='text-center'>{getMoneyString(metaData.avgMoney)}</td>
-                        <td className='text-center'>{metaData.perc1st}%</td>
-                        <td className='text-center'>{metaData.perc2nd}%</td>
-                        <td className='text-center'>{metaData.percLast}%</td>
-                        <td className='text-center'>{metaData.avgPlace}</td>
-                    </tr>);
-                })}
+                <thead>
+                    <tr className="metadata-header-row">
+                        <th>sd</th>
+                        <th>school</th>
+                        <th>pts</th>
+                        <th>odds</th>
+                        <th>avg money</th>
+                        <th>1st</th>
+                        <th>2nd</th>
+                        <th>last</th>
+                        <th>avg place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr className="current-outlook-row">
+                        {firstRowValues.map((val, index) => <td key={`first-row-value-${index}`}>{val}</td>)}
+                        <td className='text-center'>{getMoneyString(currentOddsForUser.avgMoney)}</td>
+                        <td className='text-center'>{currentOddsForUser.perc1st}%</td>
+                        <td className='text-center'>{currentOddsForUser.perc2nd}%</td>
+                        <td className='text-center'>{currentOddsForUser.percLast}%</td>
+                        <td className='text-center'>{currentOddsForUser.avgPlace}</td>
+                    </tr>
+                    {gameMetaData && gameMetaData.map((metaData, index) => {
+                        const team = teams[metaData.teamId]
+                        return (<tr key={`meta-data-row-${index}`}>
+                            <td>{team.seed}</td>
+                            <td>{team.name}</td>
+                            <td>{userPicks[metaData.teamId]}</td>
+                            <td className='text-center'>
+                                {getOddsString(teamRoundOdds[metaData.teamId].oddsByRound[oddsRoundNum])}
+                            </td>
+                            <td className='text-center'>{getMoneyString(metaData.avgMoney)}</td>
+                            <td className='text-center'>{metaData.perc1st}%</td>
+                            <td className='text-center'>{metaData.perc2nd}%</td>
+                            <td className='text-center'>{metaData.percLast}%</td>
+                            <td className='text-center'>{metaData.avgPlace}</td>
+                        </tr>);
+                    })}
+                </tbody>
             </table>
         </div>
     );

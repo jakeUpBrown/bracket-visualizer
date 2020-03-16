@@ -26,7 +26,7 @@ const UserSelector = ({ selectedUserId, users, setSelectedUserId, history, locat
         >
             {users && Object.values(users).map(user => {
                 return (
-                    <option value={user.userId}>{user.name}</option>)}
+                    <option key={`user-option-${user.userId}`} value={user.userId}>{user.name}</option>)}
                 )
             } 
         </select>
@@ -39,7 +39,6 @@ const mapStateToProps = (state) => {
         selectedUserId,
         users,
     } = state.toJS();
-    console.log('mapStateToProps', selectedUserId, users);
     return {
         selectedUserId,
         users,

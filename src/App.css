@@ -118,6 +118,8 @@ span {
 .champions {
   width: 90%;
   font-size: 12px;
+  color: #333333;
+  font-weight: bold;
 }
 
 .game-container {
@@ -167,12 +169,12 @@ span {
   content:"\A";
   border-style: solid;
   border-width: 5px 4px 5px 0;
-  border-color: transparent #222222 transparent transparent;
+  border-color: transparent #444444 transparent transparent;
   position: absolute;
   left: -6px;
 }
 
-.finals-team-2:hover:after {
+.finals-team-2:hover:before {
   content:"\A";
   border-style: solid;
   border-width: 5px 0 5px 4px;
@@ -182,11 +184,11 @@ span {
 }
 
 
-.finals-team-2.selected-team-line:after {
+.finals-team-2.selected-team-line:before {
   content:"\A";
   border-style: solid;
   border-width: 5px 0 5px 4px;
-  border-color: transparent transparent transparent #222222;
+  border-color: transparent transparent transparent #444444;
   position: absolute;
   right: -6px;
 }
@@ -328,7 +330,7 @@ span {
   margin-top: 15px;
 }
 
-.overall-standings, .picks-page {
+.overall-standings, .picks-page, .metadata-table {
   background-color: white;
   width: fit-content;
   border: 1px solid grey;
@@ -342,7 +344,7 @@ span {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.standings-table > tr, .picks-table > tr, .metadata-table > tr {
+.standings-table > tbody > tr, .picks-table > tbody > tr, .metadata-table > tbody > tr {
   border-top: 1px solid #C1C3D1;
   border-bottom: 1px solid #C1C3D1;
   color:#111111;
@@ -376,22 +378,26 @@ th:not(.pick-user-col) {
   padding: 0 5px;
 }
 
-tr:last-child {
+thead > tr {
+  border-top:none;
+  border-bottom: 1px solid #111111;
+  background-color: #d0d0d0;
+}
+
+thead {
+  font-size: 13px;
+}
+
+tbody > tr:last-child {
   border-bottom:none;
 }
 
-tr:nth-child(odd) {
+tbody > tr:nth-child(odd) {
   background:#f7f7f7;
 }
 
-tr:nth-child(even) {
+tbody > tr:nth-child(even) {
   background:#fdfdfd;
-}
-
-tr:first-child {
-  border-top:none;
-  background-color: #d0d0d0;
-  border-bottom: 1px solid #111111;
 }
 
 tr:last-child td:first-child {

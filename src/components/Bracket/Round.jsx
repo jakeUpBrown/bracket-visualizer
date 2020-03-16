@@ -15,7 +15,7 @@ const round =
 ({
     columnIndex,
 }) => {
-    const left = isLeftSide(columnIndex);
+    const isLeft = isLeftSide(columnIndex);
     const roundIndex = getRoundNumFromColumnIndex(columnIndex);
     const numGames = getNumGamesForColumnByRoundNum(roundIndex);
     const isChampionship = isColumnChampionship(roundIndex);
@@ -29,11 +29,11 @@ const round =
     } else {
         let i;
         for (i = 0; i < numBracketLines; i++) {
-            bracketLines[i] = <BracketLine key={`bracket-line-${columnIndex}-${i}`} left={left}></BracketLine>
+            bracketLines[i] = <BracketLine key={`bracket-line-${columnIndex}-${i}`} left={isLeft}></BracketLine>
         }
     }
 
-    let gameId = getStartingGameIdByColumn(roundIndex, left);
+    let gameId = getStartingGameIdByColumn(roundIndex, isLeft);
     let games = [];
     if (isChampionship) {
         games[0] = <ChampionshipGame key={'championship-game'} gameId={gameId}></ChampionshipGame>
@@ -51,7 +51,7 @@ const round =
                 <div className="outer-bracket-line-container">
                     {bracketLines}
                 </div>
-                <div className={`outer-game-container ${(left ? "left" : "right")}`}>
+                <div className={`outer-game-container ${(isLeft ? "left" : "right")}`}>
                     {games}
                 </div>
             </div>

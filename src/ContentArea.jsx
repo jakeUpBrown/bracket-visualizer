@@ -14,8 +14,6 @@ import './App.css';
 class ContentArea extends Component {
 
     componentDidMount() {
-        console.log('componentDidMount');
-        console.log('tester', this.props);
         const queryParams = QueryString.parse(this.props.location.search);
         if (queryParams && queryParams.userId) {
             this.props.setSelectedUserId(queryParams.userId);
@@ -25,13 +23,15 @@ class ContentArea extends Component {
     render() {
         return (
             <Switch>
-                <div className="content-area">
-                    <Route exact path="/" component={BracketPage} />
-                    <Route exact path="/standings/current" component={CurrentStandings} />
-                    <Route exact path="/round-outlook" component={RoundOutlookPage} />
-                    <Route exact path="/bad-beats" component={BadBeatsPage} />
-                    <Route exact path="/picks" component={PicksPage} />
-                </div>
+                <React.Fragment>
+                    <div className="content-area">
+                        <Route exact path="/" component={BracketPage} />
+                        <Route exact path="/standings/current" component={CurrentStandings} />
+                        <Route exact path="/round-outlook" component={RoundOutlookPage} />
+                        <Route exact path="/bad-beats" component={BadBeatsPage} />
+                        <Route exact path="/picks" component={PicksPage} />
+                    </div>
+                </React.Fragment>
             </Switch>
           );
     }
