@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
-import '../App.css';
+import '../../App.css';
 import { connect } from 'react-redux';
 import { teamIndexSelector } from '../../utilities/selectors'
 import { setSelectedTeamLine, setSelectedGameId } from '../../ducks/reducer'
-import { gameHasAllSlotsFilled } from '../../utils/Helpers'
+import { gameHasAllSlotsFilled } from '../../utilities/Helpers'
 
 class TeamLine extends PureComponent {
     constructor(props)

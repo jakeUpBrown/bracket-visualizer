@@ -1,8 +1,8 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import TeamLine from './TeamLine';
 import { connect } from 'react-redux';
-import { gameHasAllSlotsFilled } from '../../utils/Helpers'
+import { gameHasAllSlotsFilled } from '../../utilities/Helpers'
 
 const game = 
 ({ gameId, selectedGame, allSlotsFilled }) => {

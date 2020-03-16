@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route } from "react-router-dom";
-import Toolbar from './Toolbar/Toolbar.jsx';
+import Toolbar from './components/Toolbar/Toolbar';
 import ContentArea from './ContentArea';
 
 import './App.css';

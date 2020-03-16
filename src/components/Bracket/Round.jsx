@@ -1,15 +1,15 @@
 import React from 'react';
-import '../App.css';
-import Game from './Game.jsx'
-import ChampionshipGame from './ChampionshipGame.jsx'
-import BracketLine from './BracketLine.jsx'
+import '../../App.css';
+import Game from './Game'
+import ChampionshipGame from './ChampionshipGame'
+import BracketLine from './BracketLine'
 import {
     getStartingGameIdByColumn,
     isLeftSide,
     isColumnChampionship,
     getRoundNumFromColumnIndex,
     getNumGamesForColumnByRoundNum
-} from './utils/Helpers.js';
+} from '../../utilities/Helpers';
 
 const round = 
 ({

@@ -1,12 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { setSelectedUserId } from '../ducks/reducer';
+import { setSelectedUserId } from '../../ducks/reducer';
 import { withRouter } from "react-router-dom";
 import * as QueryString from "query-string"
 
 import './Toolbar.css';
-
 
 const UserSelector = ({ selectedUserId, users, setSelectedUserId, history, location }) =>
 (

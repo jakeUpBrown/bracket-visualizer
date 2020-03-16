@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
 import Round from './Round';
-import { TOTAL_COLUMNS } from '../../utils/Constants';
+import { TOTAL_COLUMNS } from '../../utilities/Constants';
 
 const Bracket = () => {
     let rounds = [];

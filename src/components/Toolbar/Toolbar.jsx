@@ -9,8 +9,16 @@ const toolbarItems = [
     link: "/",
   },
   {
-    name: "CURRENT STANDINGS",
+    name: "STANDINGS",
     link: "/standings/current",
+  },
+  {
+    name: "ROUND OUTLOOK",
+    link: "/round-outlook",
+  },
+  {
+    name: "BAD BEATS",
+    link: "/bad-beats",
   },
   {
     name: "PICKS",

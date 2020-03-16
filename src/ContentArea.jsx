@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import BracketPage from './Bracket/BracketPage.jsx';
+import BracketPage from './components/Bracket/BracketPage';
 import { Route, Switch} from "react-router-dom";
 import { connect } from "react-redux";
-import PicksPage from './Standings/PicksPage';
-import CurrentStandings from './Standings/CurrentStandings';
+import PicksPage from './components/Standings/PicksPage';
+import CurrentStandings from './components/Standings/CurrentStandings';
+import RoundOutlookPage from './components/RoundOutlook/RoundOutlookPage';
+import BadBeatsPage from './components/BadBeats/BadBeatsPage';
 import { setSelectedUserId } from './ducks/reducer';
 import * as QueryString from "query-string"
 
@@ -26,6 +28,8 @@ class ContentArea extends Component {
                 <div className="content-area">
                     <Route exact path="/" component={BracketPage} />
                     <Route exact path="/standings/current" component={CurrentStandings} />
+                    <Route exact path="/round-outlook" component={RoundOutlookPage} />
+                    <Route exact path="/bad-beats" component={BadBeatsPage} />
                     <Route exact path="/picks" component={PicksPage} />
                 </div>
             </Switch>

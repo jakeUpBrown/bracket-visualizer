@@ -1,10 +1,10 @@
 import { fromJS } from 'immutable';
-import picks from '../resources/picks.json';
-import teams from '../resources/teams.json';
-import currentOdds from '../resources/currentOdds.json';
-import users from '../resources/users.json';
-import games from '../resources/games.json';
-import teamRoundOdds from '../resources/teamRoundOdds.json';
+import picks from '../resources/picks';
+import teams from '../resources/teams';
+import currentOdds from '../resources/currentOdds';
+import users from '../resources/users';
+import games from '../resources/games';
+import teamRoundOdds from '../resources/teamRoundOdds';
 
 /*
 const createGame = (gameId, team1Id, team2Id, team1Score, team2Score) => {

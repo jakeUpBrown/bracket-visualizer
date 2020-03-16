@@ -1,10 +1,10 @@
 
 import React from 'react';
-import Bracket from './Bracket.jsx';
-import MetaDataTable from './MetaDataTable.jsx';
-import '../App.css';
+import Bracket from './Bracket';
+import MetaDataTable from './MetaDataTable';
+import '../../App.css';
 import { Component } from 'react';
-import { setSelectedTeamLine } from '../ducks/reducer';
+import { setSelectedTeamLine } from '../../ducks/reducer';
 import { connect } from 'react-redux';
 
 class BracketPage extends Component {

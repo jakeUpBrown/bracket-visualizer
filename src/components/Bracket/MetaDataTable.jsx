@@ -7,9 +7,9 @@ import {
     getMoneyString,
     getOddsString,
     getRoundNumFromGameId
-} from '../../utils/Helpers'
-import Tester from '../../utils/ObjectConstants'
-import '../App.css';
+} from '../../utilities/Helpers'
+import Tester from '../../utilities/ObjectConstants'
+import '../../App.css';
 
 const MetaDataTable = ({
     currentOddsForUser,
