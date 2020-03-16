@@ -55,3 +55,12 @@ export const getNextRoundMetaDataIndices = (game) => {
         nextRoundGameId: startingGameId + gameOffset,
     }
 }
+
+export const getMoneyString = (moneyValue) => '$' + Number(moneyValue).toFixed(2);
+
+export const getOddsString = (oddsValue) => {
+    const percValue = Number(oddsValue * 100).toFixed(1)
+    if (percValue < .1)
+        return '<0.1%'
+    return percValue + '%'
+}
