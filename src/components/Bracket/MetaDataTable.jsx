@@ -8,7 +8,8 @@ import {
     getOddsString,
     getRoundNumFromGameId
 } from '../../utilities/Helpers'
-import gamesMetaData from '../../utilities/ObjectConstants'
+import gamesMetaData from '../../resources/gamesMetaData'
+import { ROUND_NAMES } from '../../utilities/Constants'
 import '../../App.css';
 
 const MetaDataTable = ({
@@ -65,7 +66,8 @@ const MetaDataTable = ({
 
     return (
         <div className="metadata-table-section">
-            <table className="metadata-table">
+            <div className='metadata-table-title'>{ROUND_NAMES[roundNum]}</div>
+            <table>
                 <thead>
                     <tr className="metadata-header-row">
                         <th>sd</th>
@@ -81,7 +83,13 @@ const MetaDataTable = ({
                 </thead>
                 <tbody>
                     <tr className="current-outlook-row">
-                        {firstRowValues.map((val, index) => <td key={`first-row-value-${index}`}>{val}</td>)}
+                        {firstRowValues.map((val, index) => 
+                            <td key={`first-row-value-${index}`}
+                                className={(index === 1 ? 'metadata-team-name' : '')}
+                            >
+                                {val}
+                            </td>
+                        )}
                         <td className='text-center'>{getMoneyString(currentOddsForUser.avgMoney)}</td>
                         <td className='text-center'>{currentOddsForUser.perc1st}%</td>
                         <td className='text-center'>{currentOddsForUser.perc2nd}%</td>
@@ -92,7 +100,7 @@ const MetaDataTable = ({
                         const team = teams[metaData.teamId]
                         return (<tr key={`meta-data-row-${index}`}>
                             <td>{team.seed}</td>
-                            <td>{team.name}</td>
+                            <td className='metadata-team-name'>{team.name}</td>
                             <td>{userPicks[metaData.teamId]}</td>
                             <td className='text-center'>
                                 {getOddsString(teamRoundOdds[metaData.teamId].oddsByRound[oddsRoundNum])}

@@ -56,7 +56,12 @@ export const getNextRoundMetaDataIndices = (game) => {
     }
 }
 
-export const getMoneyString = (moneyValue) => '$' + Number(moneyValue).toFixed(2);
+export const getMoneyString = (moneyValue, isDeltaValue = false) => {
+    if(moneyValue < 0) {
+        return '-$' + Number(moneyValue * -1).toFixed(2)
+    }
+    return (isDeltaValue ? '+' : '') + '$' + Number(moneyValue).toFixed(2);
+}
 
 export const getOddsString = (oddsValue) => {
     const percValue = Number(oddsValue * 100).toFixed(1)

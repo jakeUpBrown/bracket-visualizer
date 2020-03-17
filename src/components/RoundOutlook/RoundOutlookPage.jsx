@@ -1,12 +1,81 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import roundOutlook from '../../resources/roundOutlook';
+import { 
+    getRoundNumFromGameId,
+    getOddsString,
+    getMoneyString,
+} from '../../utilities/Helpers'
 import '../../App.css';
 
-const RoundOutlookPage = () => {
+const RoundOutlookPage = ({
+    teams,
+    selectedUserId,
+    teamRoundOdds,
+    userPicks,
+}) => {
+    if (!roundOutlook) return <div><h1>No Round Outlook Data</h1></div>
+    const userRoundOutlook = roundOutlook[selectedUserId]
+    const roundNum = getRoundNumFromGameId(userRoundOutlook[0].gameId)
     return (
-        <div className="round-outlook-page">
-            <h1>ROUND OUTLOOK - COMING SOON</h1>
+        <div className="round-outlook-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>winner</th>
+                        <th>pts</th>
+                        <th>odds</th>
+                        <th>money effect</th>
+                        <th>1st</th>
+                        <th>2nd</th>
+                        <th>last</th>
+                        <th>avg place</th>
+                        <th>pts</th>
+                        <th>loser</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {userRoundOutlook && userRoundOutlook.map((roundOutlookRow, index) => {
+                        const winningTeam = teams[roundOutlookRow.winningTeamId];
+                        const losingTeam = teams[roundOutlookRow.losingTeamId]
+
+                        return (<tr key={`round-outlook-user${index}`}>
+                            <td>{winningTeam.seed}</td>
+                            <td>{winningTeam.name}</td>
+                            <td className='text-center'>{userPicks.picks[roundOutlookRow.winningTeamId]}</td>
+                            <td className='text-center'>{getOddsString(teamRoundOdds[roundOutlookRow.winningTeamId].oddsByRound[roundNum])}</td>
+                            <td className='text-center'>{getMoneyString(roundOutlookRow.avgMoney, true)}</td>
+                            <td className='text-center'>{Number(roundOutlookRow.perc1st).toFixed(1)}%</td>
+                            <td className='text-center'>{Number(roundOutlookRow.perc2nd).toFixed(1)}%</td>
+                            <td className='text-center'>{Number(roundOutlookRow.percLast).toFixed(1)}%</td>
+                            <td className='text-center'>{Number(roundOutlookRow.avgPlace).toFixed(1)}</td>
+                            <td className='text-center'>{userPicks.picks[roundOutlookRow.losingTeamId]}</td>
+                            <td className='text-right'>{losingTeam.name}</td>
+                            <td className='text-right'>{losingTeam.seed}</td>
+                        </tr>);
+                    })}
+                </tbody>
+            </table>
         </div>
     );
 }
 
-export default React.memo(RoundOutlookPage);
+const mapStateToProps = (state) => {
+    const {
+        teams,
+        selectedUserId,
+        teamRoundOdds,
+        picks,
+    } = state.toJS();
+    return {
+        teams,
+        selectedUserId,
+        teamRoundOdds,
+        userPicks: picks[selectedUserId],
+    }
+}
+const disconnected = connect(mapStateToProps)(RoundOutlookPage);
+
+export default React.memo(disconnected);

@@ -87,7 +87,7 @@ const mapStateToProps = (state, { gameId, isTeam1 }) => {
         score,
         teamInfo,
         allSlotsFilled: gameHasAllSlotsFilled(game),
-        teamWon: game.team1Won === isTeam1,
+        teamWon: game.team1Won === undefined ? undefined : game.team1Won === isTeam1,
         teamLineSelected,
         gameSelected,
     }

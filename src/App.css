@@ -32,6 +32,7 @@
 
 body {
   height: 100vh;
+  width: min-content;
 }
 
 .content-area {
@@ -53,7 +54,7 @@ span {
   text-align: center;
   position: relative;
   height: 700px;
-  background-color: #eeeeee;
+  background-color: #f7f7f7;
   min-width: 1100px;
   max-width: 1600px;
   font-size: 10px;
@@ -91,6 +92,10 @@ span {
 
 .teamline:not(.all-slots-filled):not(.selected-team-line):hover {
   background-color: #dddddd;
+}
+
+.teamline:not(.team-won):not(.team-lost) {
+  font-weight: 500;
 }
 
 .championship-game-box {
@@ -152,8 +157,11 @@ span {
 }
 
 .team-name {
-  flex: 1;
+  flex: 1 1;
+  display: inline-block;
+  white-space: nowrap;
   text-align: left;
+  overflow-x: hidden;
 }
 
 .finals-team-1:hover:before {
@@ -285,7 +293,8 @@ span {
 }
 
 .team-lost {
-  position: relative;
+  font-weight: 100;
+  color: #555555;
 }
 
 .current-outlook-row > td {
@@ -328,29 +337,19 @@ span {
 
 .metadata-table-section {
   margin-top: 15px;
-}
-
-.overall-standings, .picks-page, .metadata-table {
-  background-color: white;
-  width: fit-content;
+  width: min-content;
+  align-self: center;
   border: 1px solid grey;
 }
 
-.standings-table, .picks-table, .metadata-table {
-  background: #fdfdfd;
-  border-radius:3px;
-  border-collapse: collapse;
-  padding:0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+.metadata-table-title {
+  margin: 5px 0;
 }
 
-.standings-table > tbody > tr, .picks-table > tbody > tr, .metadata-table > tbody > tr {
-  border-top: 1px solid #C1C3D1;
-  border-bottom: 1px solid #C1C3D1;
-  color:#111111;
-  font-size:13px;
-  font-weight: 520;
-  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.4);
+.overall-standings, .picks-page, .round-outlook-container {
+  background-color: white;
+  width: fit-content;
+  border: 1px solid grey;
 }
 
 .standings-header-row > th {
@@ -359,6 +358,10 @@ span {
   min-width: 35px;
   overflow-wrap: break-word;
   padding: 0 5px;
+}
+
+.metadata-team-name {
+  white-space: nowrap;
 }
 
 .pick-user-col {
@@ -378,6 +381,14 @@ th:not(.pick-user-col) {
   padding: 0 5px;
 }
 
+table {
+  background: #fdfdfd;
+  border-radius:3px;
+  border-collapse: collapse;
+  padding:0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
 thead > tr {
   border-top:none;
   border-bottom: 1px solid #111111;
@@ -386,6 +397,15 @@ thead > tr {
 
 thead {
   font-size: 13px;
+}
+
+tbody > tr {
+  border-top: 1px solid #C1C3D1;
+  border-bottom: 1px solid #C1C3D1;
+  color:#111111;
+  font-size:13px;
+  font-weight: 520;
+  text-shadow: 0 1px 1px rgba(256, 256, 256, 0.4);
 }
 
 tbody > tr:last-child {
