@@ -9,7 +9,7 @@
   {
     "id": 1,
     "seed": 16,
-    "name": "NC Central/N. Dak. St.",
+    "name": "NC Central",
     "isElim": false,
     "wins": 0
   },
@@ -177,7 +177,7 @@
   {
     "id": 25,
     "seed": 11,
-    "name": "Arizona St./St. John's",
+    "name": "Arizona St.",
     "isElim": false,
     "wins": 0
   },
