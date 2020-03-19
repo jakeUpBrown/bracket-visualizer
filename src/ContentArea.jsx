@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import PicksPage from './components/Picks/PicksPage';
 import CurrentStandings from './components/Standings/CurrentStandings';
 import RoundOutlookPage from './components/RoundOutlook/RoundOutlookPage';
-import BadBeatsPage from './components/BadBeats/BadBeatsPage';
+import LuckScoresPage from './components/LuckScores/LuckScoresPage';
 import { setSelectedUserIdFuncer } from './utilities/mappedActions';
 import * as QueryString from "query-string"
 
@@ -28,7 +28,7 @@ class ContentArea extends Component {
                         <Route exact path="/" component={BracketPage} />
                         <Route exact path="/standings/current" component={CurrentStandings} />
                         <Route exact path="/round-outlook" component={RoundOutlookPage} />
-                        <Route exact path="/bad-beats" component={BadBeatsPage} />
+                        <Route exact path="/luck-scores" component={LuckScoresPage} />
                         <Route exact path="/picks" component={PicksPage} />
                     </div>
                 </React.Fragment>

@@ -24,16 +24,14 @@ const RoundOutlookPage = ({
                     <tr>
                         <th></th>
                         <th>winner</th>
-                        <th>pts</th>
                         <th>odds</th>
                         <th>money effect</th>
                         <th>1st</th>
                         <th>2nd</th>
                         <th>last</th>
                         <th>avg place</th>
-                        <th>pts</th>
-                        <th>loser</th>
                         <th></th>
+                        <th>loser</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,17 +41,15 @@ const RoundOutlookPage = ({
 
                         return (<tr key={`round-outlook-user${index}`}>
                             <td>{winningTeam.seed}</td>
-                            <td>{winningTeam.name}</td>
-                            <td className='text-center'>{userPicks.picks[roundOutlookRow.winningTeamId]}</td>
+                            <td>{`${winningTeam.name} (${userPicks.picks[roundOutlookRow.winningTeamId]})`}</td>
                             <td className='text-center'>{getOddsString(teamRoundOdds[roundOutlookRow.winningTeamId].oddsByRound[roundNum])}</td>
                             <td className='text-center'>{getMoneyString(roundOutlookRow.avgMoney, true)}</td>
                             <td className='text-center'>{Number(roundOutlookRow.perc1st).toFixed(1)}%</td>
                             <td className='text-center'>{Number(roundOutlookRow.perc2nd).toFixed(1)}%</td>
                             <td className='text-center'>{Number(roundOutlookRow.percLast).toFixed(1)}%</td>
                             <td className='text-center'>{Number(roundOutlookRow.avgPlace).toFixed(1)}</td>
-                            <td className='text-center'>{userPicks.picks[roundOutlookRow.losingTeamId]}</td>
-                            <td className='text-right'>{losingTeam.name}</td>
                             <td className='text-right'>{losingTeam.seed}</td>
+                            <td>{`${losingTeam.name} (${userPicks.picks[roundOutlookRow.losingTeamId]})`}</td>
                         </tr>);
                     })}
                 </tbody>

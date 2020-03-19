@@ -6,10 +6,15 @@
   min-width: fit-content;
   max-width: 1700px;
   min-height:400px;
+  height: fit-content;
   width: 100%;
   margin-bottom: 25px;
   background-color: #faf7f3;
   box-shadow: 0px 0px 10px 4px rgb(0,0,0,.2);
+}
+
+html, body, #app, #app>div {
+  height: 100%
 }
 
 .background {
@@ -346,7 +351,7 @@ span {
   margin: 5px 0;
 }
 
-.overall-standings, .picks-page, .round-outlook-container {
+.overall-standings, .picks-page, .round-outlook-container, .luck-scores-container {
   background-color: white;
   width: fit-content;
   border: 1px solid grey;
@@ -454,6 +459,6 @@ td:last-child {
 }
 
 .highlighted-user {
-  background-color: rgba(0,0,0,.17);
+  background-color: rgba(0,0,0,.12);
   font-weight: bold;
 }

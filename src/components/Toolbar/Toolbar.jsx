@@ -17,8 +17,8 @@ const toolbarItems = [
     link: "/round-outlook",
   },
   {
-    name: "BAD BEATS",
-    link: "/bad-beats",
+    name: "LUCK SCORES",
+    link: "/luck-scores",
   },
   {
     name: "PICKS",
