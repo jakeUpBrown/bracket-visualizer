@@ -43,7 +43,7 @@ const LuckScoresPage = ({
     });
 
     if (!luckRows || luckRows.length === 0)
-        return <div><h3>No Luck Data Found</h3></div>
+        return <div><h3>No luck data found for {users[selectedUserId].name}</h3></div>
 
     return (
         <div className="luck-scores-container">
